@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Example of Child Selector */
+        p > a{
+            color: green;
+        } 
+
+        /* Example of Descendant Selector */
+        div a{
+            color : green;
+        }
+
+        /* Example of Grouping Selector */
+        p, h2{
+            color: blue;
+        }
+
+        /* Example of attribute selector */
+        input[type="text"]{
+            color:red;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>
+                <a href="http://www.google.com" target="_blank">Google</a>
+            </li>
+            <li>
+                <a href="http://www.facebook.com" target="_blank">Facebook</a>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <p>
+            <a href="http://www.instagram.com" target="_blank">instagram</a>
+        </p>
+    </div>
+    <div>
+        <h1>This is a heading 1</h1>
+        <h2>This ia a heading 2</h2>
+        <p>This ia paragraph 1</p>
+        <p>This ia paragraph 2</p>
+    </div>
+    <form>
+        First Name <br>
+        <input type="text" name="fname">
+    </form>
+</body>
+</html>
+
+
+
+<!-- Here in this code we are going to understand about HTML hierarchy -->
+
+<!-- <a></a> is child of <li></li> and <li></li> tag is parent of <a></a> -->
+<!-- <li></li> is child of <ul></ul> and <ul></ul> tag is parent of <li></li>  -->
+<!-- <a></a> element is not child to <div></div> even if it is inside div -->
+<!-- <a></a> is decendant to div element -->
+<!-- <div></div> element is anc -->
