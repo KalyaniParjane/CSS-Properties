@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Positionn CSS Property</title>
+    <!-- There are 4 values of position property -->
+    <!-- 1] static -->
+    <!-- 2] relative -->
+    <!-- 3] fixed -->
+    <!-- 4] absolute -->
+
+    <!-- We will understand one more thing -->
+    <!-- z-index -->
+    <!-- z-index only works for thoes elements who has there position values other than static -->
+
+    <style>
+        /* Using position:relative */
+        .abc{
+            position: relative;
+            top: 100px;
+            left: 50px;
+        }
+
+        /* Using position:fixed */
+        .xyz{
+            position:fixed;
+            right:20px;
+            bottom: 10px;
+        }
+
+        /* Using position:absolut */
+        div{
+            position: relative;
+            border: solid 1px red;
+            height: 150px;
+        }
+        .pqr{
+            position:absolute;
+            bottom: 20px;
+            right: 20px;
+
+        }
+
+        /* Understanding z-index */
+        h1{
+            margin-top: 100px;
+            margin-bottom: 0px;
+            padding: 0px;
+            position:relative;
+            z-index: 1;
+        }
+        .z{
+            background-color: red;
+            position:relative;
+            top:-25px;
+            z-index: 2;
+        }
+
+        h2{
+            margin-top: 100px;
+            margin-bottom: 0px;
+            padding: 0px;
+            position:relative;
+            z-index: 3;
+        }
+
+        .y{
+            background-color: red;
+            position:relative;
+            top:-25px;
+            z-index: 1;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p class="xyz">
+            This is first paragraph
+        </p>
+        <p class="abc">
+            This is second paragraph
+        </p>
+        <p>
+            This is third paragraph
+        </p>
+        <P class="pqr">
+            This line is to make you understand the position:absolut
+            property of css according to this property this paragraph will move to its
+            " nearest positioned ancestor element "
+        </P>
+
+        <h1>Let's increase Understanding of z-index</h1>
+        <p class="z">Is it fun to learn CSS...</p>
+
+        <h2>Let's increase Understanding of z-index</h2>
+        <p class="y">Is it fun to learn CSS...</p>
+    </div>
+    
+</body>
+</html>
