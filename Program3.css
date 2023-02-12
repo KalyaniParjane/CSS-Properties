@@ -1,0 +1,58 @@
+.flexbox1{
+    border: solid;
+    border-color: black;
+    display: flex;
+}
+
+.flexbox1 > p{
+    border: solid;
+    border-color: red;
+    width: 100px;
+    padding: 20px;
+    margin: 2px;
+}
+
+.flexbox2{
+    border: solid;
+    border-color: black;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.flexbox2 > p{
+    border: solid;
+    border-color: red;
+    width: 100px;
+    padding: 20px;
+    margin: 2px;
+}
+
+.flexbox3{
+    border: solid;
+    border-color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.flexbox3 > p{
+    border: solid;
+    border-color: red;
+    width: 100px;
+    padding: 20px;
+    margin: 2px;
+}
+
+.flexbox4{
+    border: solid;
+    border-color: black;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.flexbox4 > p{
+    border: solid;
+    border-color: red;
+    width: 100px;
+    padding: 20px;
+    margin: 2px;
+}
