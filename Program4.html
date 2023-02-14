@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-image: url("img.jpg");
+        }
+        form{
+            background-color: black;
+            width: 500px;
+            padding: 10px;
+            border-radius: 10px;
+            opacity: 0.7;
+            color: white;
+            
+        }
+        #table_head{
+            font-size: 25px;
+            font-weight: 500 ;
+
+        }
+        .size{
+            font-size: 17px;
+        }
+        .button{
+            padding: 5px;
+            font-size: 17px;
+            background-color: rgb(230, 238, 238);
+            margin-left:  10px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+        .button1{
+            padding: 5px;
+            font-size: 17px;
+            margin-left: 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+        .button:hover{
+            background-color: rgb(91, 91, 98);
+            color: white;
+        }
+        .button1:hover{
+            background-color: rgb(91, 91, 98);
+            color: white;
+        }
+        .input{
+            border: none;
+            border-radius: 3px;
+            padding: 5px;
+        }
+        .input1{
+            border: none;
+            border-radius: 3px;
+            padding: 5px;
+            background-color: white;
+        }
+        .b1{
+            display: flex;
+            justify-content: center;
+           
+           
+        }
+        .b1 > button{
+            margin: 5px;
+            margin-bottom: 10px;
+            font-size: 15px;
+            padding: 10px;
+            width: 100px;
+            border: 2px solid black;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: none;
+        }
+        .b1 > button:hover{
+            margin: 5px;
+            font-size: 15px;
+            padding: 10px;
+            width: 100px;
+            border: 2px solid white;
+            border-radius: 10px;
+            background-color: black;
+            cursor: pointer;
+            color: white;
+        }
+    </style>
+    <script src="JQuery.js"></script>
+    <script type="text/javascript">
+         $(document).ready(function(){
+            $("form").hide();
+           $("#B1").click(function(){
+             $("form").show(1000);
+           }) 
+        })
+
+        $(document).ready(function(){
+            $("#B2").click(function(){
+                $("form").slideUp(1000)
+            })
+        })
+        $(document).ready(function(){
+            $("#R1 , #R2, #R3").hide();
+            $("#r1").click(function(){
+                $("#R1").show(1000);
+                $("#R2").hide(1000);
+                $("#R3").hide(1000);
+
+            })
+
+            $("#r2").click(function(){
+                $("#R2").show(1000);
+                $("#R1").hide(1000);
+                $("#R3").hide(1000);
+            })
+
+            $("#r3").click(function(){
+                $("#R3").show(1000);
+                $("#R2").hide(1000);
+                $("#R1").hide(1000);
+            })
+
+            $("#r4").click(function(){
+                $("#R1").show(1000);
+                $("#R2").show(1000);
+                $("#R3").show(1000);
+            })
+
+            
+        })
+
+          var total=0;
+          function bill_S(elem) {
+            
+                if (elem.checked == true) { 
+                    total += Number(elem.value); 
+                }else{
+                    total -=Number(elem.value);
+                }
+            
+                document.getElementById('bill').value = total.toFixed(0);
+
+                var gst = total*0.03;
+                var fbill = gst + total;
+
+                document.getElementById('fbill').value = fbill.toFixed(0);
+
+
+
+            }
+
+        </script>
+</head>
+<body>
+    <div class="b1">
+       <button id="B1">Buy</button>
+       <button id="B2">Skip</button>
+    </div>
+        <form action="sucess.html" name="f1">
+            <center>
+            <P id="table_head">
+                Mother Care
+            </p>
+            <table cellpadding="7">
+                <tr>
+                    <td class="size">
+                        Customer Name
+                    </td>
+                    <td>
+                        <input type="text" name="fname" class="input">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="size">
+                        Phone number
+                    </td>
+                    <td>
+                        <input type="text" name="phone" class="input">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="size">
+                        Email
+                    </td>
+                    <td>
+                        <input type="email" name="email" class="input">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="size">
+                        Product
+                    </td>
+                    <td>
+                        <input type="radio" name="toc" id="r1">Stationaries<br>
+                        <input type="radio" name="toc" id="r2">Food<br>
+                        <input type="radio" name="toc" id="r3">Toys<br>
+                        <input type="radio" name="toc" id="r4">All<br>
+                    </td>
+                    
+                </tr>
+                <tr id="R1">
+                    <td class="size">
+                        Stationaries
+                    </td>
+                    <td>
+                        <input type="checkbox" name="Stationaries" value = "700" onclick="bill_S(this)">Bag Rs 700<br>
+                        <input type="checkbox" name="Stationaries" value = "100" onclick="bill_S(this)">Pencil Rs 100<br>
+                        <input type="checkbox" name="Stationaries" value = "50" onclick="bill_S(this)">Pen Rs 50<br>
+                        <input type="checkbox" name="Stationaries" value = "300" onclick="bill_S(this)">clays Rs 300<br>
+                    </td>
+                </tr>
+                <tr id="R2">
+                    <td class="size">
+                        Food
+                    </td>
+                    <td>
+                        <input type="checkbox" name="Food" value="700" onclick="bill_S(this)">carelac Rs 700<br>
+                        <input type="checkbox" name="Food" value="100" onclick="bill_S(this)">Kitkat Rs 100<br>
+                        <input type="checkbox" name="Food" value="500" onclick="bill_S(this)">Pedia sure Rs 500<br>
+                        <input type="checkbox" name="Food" value="300" onclick="bill_S(this)">Bournvita Rs 300<br>
+                    </td>
+                </tr>
+                <tr id="R3">
+                    <td class="size">
+                        Toy
+                    </td>
+                    <td>
+                        <input type="checkbox" name="toy" value="1000" onclick="bill_S(this)">Mini Laptop Rs 1000<br>
+                        <input type="checkbox" name="toy" value="5000" onclick="bill_S(this)">Remote Rs 5000<br>
+                        <input type="checkbox" name="toy" value="10000" onclick="bill_S(this)">Helicoptor Rs 10000<br>
+                        <input type="checkbox" name="toy" value="3000" onclick="bill_S(this)">Doll Rs 3000<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="size">
+                        Bill Amount
+                    </td>
+                    <td>
+                        <input type="text" id="bill" class="input1" disabled>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="size">
+                        GST
+                    </td>
+                    <td>
+                        <input type="text" name="gst" class="input1" value="0.03" disabled>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="size">
+                        Final bill amount
+                    </td>
+                    <td>
+                        <input type="text" id="fbill" class="input1" disabled>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="submit" value="Register" class="button">
+
+                    </td>
+                    <td>
+                        <input type="reset" value="Reset" class="button1">
+                    </td>
+                </tr>
+            </table>
+            </center>
+        </form>
+       
+ 
+    
+    
+</body>
+</html>
